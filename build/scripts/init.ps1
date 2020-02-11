@@ -1,6 +1,6 @@
 ﻿. $PSScriptRoot\config.ps1
 
-nuget sources add -Name "MyAccountFeed" -Source "%NUGET_ACCOUNT_FEED%" -UserName "%NUGET_USER%" -Password "%NUGET_PWD%"
+nuget sources add -Name "MyAccountFeed" -Source "$Env:NUGET_ACCOUNT_FEED" -UserName "$Env:NUGET_USER" -Password "$Env:NUGET_PWD"
 
 nuget install OpenCover -Version $opencoverversion -OutputDirectory $PsScriptRoot\..\tools
 nuget install coveralls.net -Version $coverallsversion -OutputDirectory $PsScriptRoot\..\tools
